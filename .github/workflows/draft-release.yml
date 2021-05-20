@@ -16,7 +16,7 @@ jobs:
         with:
           submodules: recursive
       - name: Build binaries
-        uses: georgik/esp-idf-ci-action@latest
+        uses: georgik/esp-idf-ci-action@v4.2.1
       - name: Archive binaries
         run: |
           zip --junk-paths binaries build/*.bin build/bootloader/*.bin build/partition_table/*.bin
