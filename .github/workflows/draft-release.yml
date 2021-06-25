@@ -16,7 +16,8 @@ jobs:
         uses: espressif/esp-idf-ci-action@v4.2.1
       - name: Archive binaries
         run: |
-          zip --junk-paths binaries build/*.bin build/bootloader/*.bin build/partition_table/*.bin
+          mkdir binaries
+          cp build/*.bin build/bootloader/*.bin build/partition_table/*.bin support/* binaries/
       - name: Archive artifact
         uses: actions/upload-artifact@v2
         with:
